@@ -1,0 +1,23 @@
+{
+  "name": "rap-camp-bracket-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djones2/rap-camp-bracket-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djones2/rap-camp-bracket-generator/issues"
+  },
+  "homepage": "https://github.com/djones2/rap-camp-bracket-generator#readme",
+  "devDependencies": {
+    "vite": "^7.2.6"
+  }
+}

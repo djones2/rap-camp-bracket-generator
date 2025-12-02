@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rap Camp Bracket Busters</title>
+</head>
+
+<body>
+    <h1>Login with your Spotify</h1>
+    <button id="spotify-login">Login to Spotify</button>
+    <script>
+        document.getElementById('spotify-login').onclick = function () {
+            const clientId = "ad87acc320654742836f402e1e0534e3";
+            const redirectUri = "http://localhost:5173/callback";
+            const scopes = "user-read-email";
+            const authUrl =
+                "https://accounts.spotify.com/authorize" +
+                "?response_type=token" +
+                "&client_id=" + encodeURIComponent(clientId) +
+                "&scope=" + encodeURIComponent(scopes) +
+                "&redirect_uri=" + encodeURIComponent(redirectUri);
+            window.location = authUrl;
+        };
+
+        const token = localStorage.getItem('spotify_access_token');
+        if (token) {
+            // Example: Fetch user profile
+            fetch('https://api.spotify.com/v1/me', {
+                headers: { 'Authorization': 'Bearer ' + token }
+            })
+                .then(res => res.json())
+                .then(profile => {
+                    document.body.innerHTML = `<h1>Welcome, ${profile.display_name}</h1>`;
+                });
+        }
+    </script>
+</body>
+
+</html>
